@@ -1,0 +1,40 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "users": [
+    {
+      "uname": "sathish",
+      "mobile": "8680829622",
+      "email": "sathishsaihish@gmail.com",
+      "id": 1
+    },
+    {
+      "uname": "sathish",
+      "mobile": "8680829622",
+      "email": "sathishsaihish@gmail.com",
+      "id": 2
+    }
+  ],
+  "products":[
+    {
+      "id":3,
+      "model":"fertilizer",
+      "image":"fertilizer.jpg"
+    }
+  ]
+}

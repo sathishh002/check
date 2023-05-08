@@ -1,0 +1,84 @@
+<div class="move">
+<form [formGroup]="loginform1">
+    <div class="whole">
+    <div class="form-group">
+        <label for="">username</label>
+        <input type="text" name="username" formControlName="username">
+    </div>
+
+    <div *ngIf="loginform1.controls['username'].invalid&&loginform1.controls['username'].touched">
+ <small *ngIf="loginform1.controls['username'].errors?.['required']">Please enter username</small>
+<small *ngIf="loginform1.controls['username'].errors?.['minlength']">Please enter username with atleast 3 characters</small>
+    </div>
+
+    <div class="form-group">
+        <label for="">password</label>
+        <input type="password" name="password" formControlName="password">
+    </div>
+
+    <div class="form-group">
+        <label for="">cpassword</label>
+        <input type="password" name="cpassword" formControlName="cpassword" id="cpass">
+    </div>
+<small *ngif="loginform1.controls['cpassword'].errors?.['confirmvalidator']"></small>
+<small *ngIf="loginform1.controls['cpassword'].errors?.['required']">Please enter correct password</small>
+<div class="mod">
+  <a href="http://localhost:4200/register">New to this Site?</a>
+</div>
+</div>
+
+    <button [disabled]="!loginform1.valid">Login</button>
+<!-- <script>
+    var check=document.getElementbyId("cpass");
+    if(check==''){
+        document.getElementById("cpass").style.bordercolor="red";
+    }
+</script> -->
+</form>
+</div>
+<style>
+  .mod{
+    position: relative;
+    top:-5px;
+    left:29px;
+  }
+  a:hover{
+    color:black
+  }
+  a{
+    color:white;
+    text-decoration: none;
+  }
+  .mov{
+    background-color: green;
+  }
+  .whole{
+    border:2px solid black;
+    border-radius: 20px;
+    background-color: green;
+    position: absolute;
+    left:34%;
+    top:35%;
+  }
+  .form-gropu1 input{
+    position: relative;
+    left:-30px;
+ }
+  label,input{
+    padding:10px;
+    margin: 20px;
+  }
+  input{
+    border-radius: 20px;
+  }
+  button{
+    position: absolute;
+    top:75%;
+    left:45%;
+  }
+ .form-gropu1 input{
+    position: relative;
+    left:-30px;
+ }
+
+</style>

@@ -1,0 +1,71 @@
+<p>
+    
+</p>
+<div class="container">
+<div class="col" *ngFor="let item of productList">
+<img src="{{item.image}}" class="pic-size">
+<span><a routerLink="/product/{[item.model}">{{item.model}}</a></span>
+</div>
+</div>
+    <router-outlet></router-outlet>
+    <div class="product">
+        <img src="assets/images/grainseeds.jpg" alt="">
+        <div class="content">
+        GRAINSEEDS<br><br>
+        AMOUNT:100RS<br><br>
+        <a href="http://localhost:4200/login">BUY NOW</a>
+        <div class="product1">
+          <img src="assets/images/pesticides.jpg" alt="">
+           <div class="content1">
+          PESTICIDES<br><br>
+          AMOUNT:20RS<br><br>
+          <a href="http://localhost:4200/login">BUY NOW</a>
+          </div> 
+          </div>
+        </div>
+        </div>
+        
+         <!-- <app-book [attrBook]="books"></app-book> -->
+        <style>
+          .content{
+            position: relative;
+            left:20px;
+          }
+          .content1{
+            position: relative;
+            left:280px;
+            top:-280px;
+          } 
+        
+          .product1 img{
+            position: relative;
+            top:-60px;
+          }
+          a:hover{
+            color:black;
+          }
+          a{
+            color:white;
+            text-decoration: none;
+          }
+          img{
+            width:250px;
+            height:220px;
+          }
+          .product{
+            border: 2px solid black;
+            display: flex;
+            background-color: green;
+            height:220px;
+            position: relative;
+            top:50px;
+          }
+          .product1{
+            position: relative;
+            top:-30px;
+            left:500px;
+          }
+        </style>
+        
+    
+

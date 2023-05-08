@@ -1,0 +1,99 @@
+<p>register works!</p>
+<!-- <div [hidden]="!submitted">
+    <h2>You submitted the following details</h2>
+    </div> -->
+    <form  [formGroup]="registerform1" (submit)="submitForm()">
+
+    <div class="whole">
+     <!-- {{registerform1.value|json}}  -->
+    <div class="form-group">
+    <label for="">Username</label>
+    <input type="text"  minlength="3" required formControlName="username" name="username" >
+    </div>
+    <div *ngIf="registerform1.controls['username'].invalid&&registerform1.controls['username'].touched">
+      <small *ngIf="registerform1.controls['username'].errors?.['required']">Please enter username</small>
+     <small *ngIf="registerform1.controls['username'].errors?.['minlength']">Please enter username with atleast 3 characters</small>
+         </div>
+     
+    <!-- <div [hidden]="uname.valid || uname.pristine" 
+    class="alert alert-danger">
+    Name is required-->
+  
+    <!-- <div class="form-group">
+    <label for="">Mobileno:</label>
+    <input type="text" name="mobileno" #mobno=ngModel [(ngModel)]="mobileno"
+    minlength="3" required>
+    </div>
+    <div [hidden]="mobno.valid || mobno.pristine"
+    class="alert alert-danger">
+    Mobile number is required
+    </div> -->
+    <div class="form-group">
+    <label for="">Email-Id </label>
+    <input type="email" name="emailid"  minlength="3" required formControlName="email" name="emailid"  required>
+    <!-- <div [hidden]="mailid.valid || mailid.pristine" 
+    class="alert alert-danger">
+    EmailId is required-->
+    </div>
+    <div class="form-group">
+      <label for="">password</label>
+      <input type="password"  formControlName="password" name="password">
+  </div>
+  <small *ngif="registerform1.controls['password'].errors?.['conformvalidator']"></small>
+
+  <div class="form-group1">
+      <label for="">cpassword</label>
+      <input type="password"  formControlName="cpassword" id="cpass" name="cpassword"> 
+  </div>
+  <div>
+<small *ngif="registerform1.controls['cpassword'].errors?.['conformvalidator']"></small>
+<small *ngif="registerform1.controls['cpassword'].errors?.['required']">Please enter correct password</small>
+
+</div>
+    <!-- <button type="submit" value="SUBMIT" >SUBMIT</button> -->
+<br><br>
+<!-- <div *ngIf="uname.errors && (uname.dirty||uname.touched)" >
+    <div [hidden]="!uname.errors['required']">Please enter username</div>
+
+    <div [hidden]="!uname.errors['minlength']">Please enter username with atleast 3 characters</div>
+  </div> -->
+<!-- touched:{{uname.touched}}<br>
+untouched:{{uname.untouched}}<br>
+pristine:{{uname.pristine}}<br>
+dirty:{{uname.dirty}}<br>
+valid:{{uname.valid}}<br>
+invalid:{{uname.invalid}}<br> -->
+</div>
+<button [disabled]="!registerform1.valid">submit</button> 
+
+</form>
+
+
+<style>
+   .ng-valid[required], .ng-valid.required {
+    border: 3px solid #0fe621; 
+    }
+    .ng-invalid:not(form) {
+    border: 3px solid #f70c0c; 
+    } 
+  .whole{
+    border:2px solid black;
+    border-radius: 20px;
+    background-color: green;
+    position: absolute;
+    left:34%;
+    top:31%;
+  }
+  input{
+    border-radius:20px ;
+  }
+  label,input{
+    padding:10px;
+    margin: 10px;
+  }
+  button{
+    position: absolute;
+    top:78%;
+    left:43%;
+  }
+</style>
